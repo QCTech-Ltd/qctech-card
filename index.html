@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Code Technologies Ltd. | Contatti</title>
+    <meta name="description" content="Scheda di contatto digitale per Quantum Code Technologies Ltd. Scansiona o scarica i dettagli di contatto.">
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#07090e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- QRCode JS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nOMQVqgTC8+2hqDZxKHPhRm4OTpkUybnybecBDx3CXGVqehh36F5Dac3o34cT4pMjOPByp+XCajA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <!-- Background elements -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    
+    <main class="card-container">
+        <article class="contact-card">
+            <!-- Card Banner -->
+            <header class="card-header">
+                <div class="header-banner"></div>
+            </header>
+
+            <!-- Card Info -->
+            <section class="card-body">
+                <h1 class="visually-hidden">Quantum Code Technologies Ltd.</h1>
+                <div class="logo-container">
+                    <img src="logo.png" alt="Quantum Code Technologies Ltd." class="brand-logo">
+                </div>
+                <p class="company-meta">Company Number: <span class="badge">17317573</span></p>
+                
+                <hr class="divider">
+                
+                <!-- Quick Contact Grid -->
+                <div class="actions-grid">
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/447754812247" class="grid-item" id="btn-whatsapp" target="_blank" rel="noopener">
+                        <div class="item-icon icon-whatsapp">
+                            <!-- WhatsApp SVG -->
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="currentColor" d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.424 2.5 1.134 3.473L6.68 18.23l2.92-.816a5.727 5.727 0 0 0 2.431.554h.002c3.18 0 5.766-2.586 5.768-5.766 0-3.18-2.586-5.766-5.767-5.766zm3.432 8.016c-.14.394-.712.723-1.01.768-.27.042-.622.073-1.748-.393-1.439-.594-2.36-2.062-2.43-2.158-.073-.097-.584-.775-.584-1.479 0-.704.368-1.05.5-1.196.13-.146.29-.183.388-.183.097 0 .194.001.278.005.088.004.206-.033.322.247.12.288.409.996.445 1.069.036.072.06.157.012.253-.049.097-.073.157-.146.242-.073.085-.154.19-.22.254-.073.073-.15.152-.064.298.085.146.38 1.258.948 1.764.73.65 1.346.852 1.534.943.188.09.301.077.413-.051.112-.13.48-.557.608-.748.128-.19.256-.16.43-.097.175.064 1.112.524 1.306.621.194.098.324.146.372.23.049.083.049.48-.09.873z"/>
+                            </svg>
+                        </div>
+                        <div class="item-details">
+                            <span class="label">WhatsApp</span>
+                            <span class="value">+44 7754 812247</span>
+                        </div>
+                    </a>
+
+                    <!-- Telefono -->
+                    <a href="tel:+447754812247" class="grid-item" id="btn-phone">
+                        <div class="item-icon icon-phone">
+                            <!-- Phone SVG -->
+                            <svg viewBox="0 0 24 24" width="22" height="22">
+                                <path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </div>
+                        <div class="item-details">
+                            <span class="label">Telefono</span>
+                            <span class="value">+44 7754 812247</span>
+                        </div>
+                    </a>
+
+                    <!-- Email -->
+                    <a href="mailto:hello@qc-tech.co.uk" class="grid-item" id="btn-email">
+                        <div class="item-icon icon-email">
+                            <!-- Email SVG -->
+                            <svg viewBox="0 0 24 24" width="22" height="22">
+                                <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </div>
+                        <div class="item-details">
+                            <span class="label">Email</span>
+                            <span class="value">hello@qc-tech.co.uk</span>
+                        </div>
+                    </a>
+
+                    <!-- Sito Web -->
+                    <a href="https://qc-tech.co.uk" class="grid-item" id="btn-web" target="_blank" rel="noopener">
+                        <div class="item-icon icon-web">
+                            <!-- Globe SVG -->
+                            <svg viewBox="0 0 24 24" width="22" height="22">
+                                <path fill="currentColor" d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.33-.14 2 0 .67.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.33-.16-2 0-.67.07-1.34.16-2h4.68c.09.66.16 1.33.16 2 0 .67-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.33.14-2 0-.67-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/>
+                            </svg>
+                        </div>
+                        <div class="item-details">
+                            <span class="label">Sito Web</span>
+                            <span class="value">qc-tech.co.uk</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Address / Location Button -->
+                <a href="https://maps.google.com/?q=Flat+3,+Jackson+Wharf,+Adderley+Road,+Bishop's+Stortford,+CM23+3AX" class="address-button" target="_blank" rel="noopener" id="btn-address">
+                    <div class="address-icon">
+                        <!-- Map Marker SVG -->
+                        <svg viewBox="0 0 24 24" width="22" height="22">
+                            <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                    </div>
+                    <div class="address-details">
+                        <span class="address-label">Sede Legale</span>
+                        <address class="address-value">Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX</address>
+                    </div>
+                </a>
+            </section>
+
+            <!-- Card Actions -->
+            <footer class="card-footer">
+                <button id="btn-save" class="btn-primary" aria-label="Salva contatto in rubrica">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                    Aggiungi ai Contatti
+                </button>
+                
+                <div class="secondary-actions">
+                    <button id="btn-share" class="btn-secondary" aria-label="Condividi profilo">
+                        <svg viewBox="0 0 24 24" width="18" height="18">
+                            <path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+                        </svg>
+                        Condividi
+                    </button>
+                    
+                    <button id="btn-qr-toggle" class="btn-secondary" aria-label="Mostra codice QR">
+                        <svg viewBox="0 0 24 24" width="18" height="18">
+                            <path fill="currentColor" d="M3 11h8V3H3v8zm2-6h4v4H5V5zM3 21h8v-8H3v8zm2-6h4v4H5v-4zM13 3v8h8V3h-8zm6 6h-4V5h4v4zM19 19v2h2v-2h-2zM13 13h2v2h-2zm2 2h2v2h-2zm-2 2h2v2h-2zm2 2h2v2h-2zm2-2h2v-2h-2zm0-4h2v2h-2z"/>
+                        </svg>
+                        QR Code
+                    </button>
+                </div>
+
+                <!-- Expandable QR Code Container -->
+                <div id="qr-container" class="qr-container hidden" aria-hidden="true">
+                    <p class="qr-info">Fai scansionare questo codice per trasmettere le informazioni di contatto.</p>
+                    <div class="qr-wrapper">
+                        <div id="qrcode"></div>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <!-- Script file -->
+    <script src="script.js"></script>
+</body>
+</html>
