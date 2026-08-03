@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:;Quantum Code Technologies Ltd.;;;
+FN:Quantum Code Technologies Ltd.
+ORG:Quantum Code Technologies Ltd.
+ADR;TYPE=work;CHARSET=UTF-8:;;Flat 3, Jackson Wharf, Adderley Road;Bishop's Stortford;Hertfordshire;CM23 3AX;United Kingdom
+URL;TYPE=work:https://qc-tech.co.uk
+EMAIL;TYPE=work,internet:hello@qc-tech.co.uk
+TEL;TYPE=CELL:+447754812247
+NOTE:Company Number 17317573
+REV:2026-07-30T00:00:00Z
+END:VCARD

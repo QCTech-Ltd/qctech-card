@@ -1,0 +1,18 @@
+{
+  "name": "Quantum Code Technologies",
+  "short_name": "QC Tech",
+  "description": "Scheda di contatto digitale per Quantum Code Technologies Ltd.",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#07090e",
+  "theme_color": "#07090e",
+  "icons": [
+    {
+      "src": "../logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
