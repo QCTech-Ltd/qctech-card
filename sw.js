@@ -1,4 +1,4 @@
-const CACHE_NAME = 'qc-tech-contact-v1';
+const CACHE_NAME = 'qc-tech-contact-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -8,7 +8,7 @@ const ASSETS = [
   './quantum_code_contact.vcf',
   './manifest.json',
   'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js',
-  'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap'
+  'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap'
 ];
 
 // Install Event - Caching Assets

@@ -50,7 +50,7 @@ END:VCARD`;
             text: cardUrl,
             width: 160,
             height: 160,
-            colorDark: '#07090e',
+            colorDark: '#0f172a',
             colorLight: '#ffffff',
             correctLevel: QRCode.CorrectLevel.M
         });

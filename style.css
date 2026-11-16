@@ -1,23 +1,22 @@
-/* Design System and Global Styles */
+/* QC Tech design tokens (aligned with qc-tech.co.uk) */
 :root {
-    --bg-dark: #07090e;
-    --card-bg: rgba(17, 22, 34, 0.65);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --glass-highlight: rgba(255, 255, 255, 0.03);
-    
-    --primary-cyan: #00f2fe;
-    --primary-blue: #4facfe;
-    --primary-purple: #9b51e0;
-    
-    --text-main: #f3f4f6;
-    --text-muted: #9ca3af;
-    --text-dark: #6b7280;
-    
-    --shadow-glow: rgba(0, 242, 254, 0.15);
-    --shadow-purple: rgba(155, 81, 224, 0.15);
-    
-    --font-outfit: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --light-bg: #ffffff;
+    --light-surface: #f6f8fb;
+    --light-text: #0f172a;
+    --light-text-muted: #475569;
+    --light-border: #e2e8f0;
+    --light-primary: #1e6fdb;
+    --light-emphasis: #562ac5;
+    --light-accent: #0ea5a8;
+    --light-cta-dark: #0b1c2c;
+
+    --font-sans: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    --radius-card: 16px;
+    --radius-control: 12px;
+    --radius-pill: 9999px;
+    --shadow-card: 0 10px 40px rgba(15, 23, 42, 0.1);
+    --shadow-card-hover: 0 16px 34px rgba(15, 23, 42, 0.12);
 }
 
 * {
@@ -27,9 +26,10 @@
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    font-family: var(--font-inter);
+    background-color: var(--light-surface);
+    color: var(--light-text);
+    font-family: var(--font-sans);
+    font-weight: 400;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -39,44 +39,8 @@ body {
     padding: 20px;
 }
 
-/* Ambient Background Animations */
 .ambient-glow {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(120px);
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.55;
-}
-
-.glow-1 {
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, var(--primary-cyan) 0%, transparent 70%);
-    top: -50px;
-    left: -50px;
-    animation: floatGlow1 25s infinite alternate ease-in-out;
-}
-
-.glow-2 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, var(--primary-purple) 0%, transparent 70%);
-    bottom: -100px;
-    right: -100px;
-    animation: floatGlow2 30s infinite alternate ease-in-out;
-}
-
-@keyframes floatGlow1 {
-    0% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(60px, 80px) scale(1.1); }
-    100% { transform: translate(-40px, 120px) scale(0.9); }
-}
-
-@keyframes floatGlow2 {
-    0% { transform: translate(0, 0) scale(1.2); }
-    50% { transform: translate(-80px, -60px) scale(0.9); }
-    100% { transform: translate(40px, -100px) scale(1.1); }
+    display: none;
 }
 
 /* Card Container & Entry Animation */
@@ -97,22 +61,17 @@ body {
 }
 
 .contact-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 28px;
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    background: var(--light-bg);
+    border: 1px solid var(--light-border);
+    border-radius: var(--radius-card);
     overflow: hidden;
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55), 
-                inset 0 1px 1px rgba(255, 255, 255, 0.1);
-    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .contact-card:hover {
-    border-color: rgba(0, 242, 254, 0.25);
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.65), 
-                0 0 40px rgba(0, 242, 254, 0.04), 
-                inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    border-color: var(--light-border);
+    box-shadow: var(--shadow-card-hover);
 }
 
 /* Header & Banner styling */
@@ -123,14 +82,7 @@ body {
 
 .header-banner {
     height: 100%;
-    background: linear-gradient(135deg, #090e18 0%, #151e33 50%, #00f2fe 100%);
-    background-size: 200% 200%;
-    animation: gradientFlow 10s ease infinite alternate;
-}
-
-@keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
+    background: linear-gradient(90deg, var(--light-primary), var(--light-emphasis));
 }
 
 /* Visually Hidden Utility for SEO */
@@ -160,13 +112,11 @@ body {
     width: 85%;
     height: auto;
     display: block;
-    filter: drop-shadow(0 0 16px rgba(0, 242, 254, 0.12));
-    transition: transform 0.4s ease, filter 0.4s ease;
+    transition: transform 0.3s ease;
 }
 
 .brand-logo:hover {
-    transform: scale(1.03);
-    filter: drop-shadow(0 0 24px rgba(0, 242, 254, 0.25));
+    transform: scale(1.02);
 }
 
 /* Card Body Content */
@@ -177,7 +127,7 @@ body {
 
 .company-meta {
     font-size: 13px;
-    color: var(--text-muted);
+    color: var(--light-text-muted);
     font-weight: 500;
     display: flex;
     justify-content: center;
@@ -186,12 +136,14 @@ body {
 }
 
 .badge {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--primary-cyan);
-    font-family: var(--font-outfit);
-    padding: 2px 8px;
-    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--light-border);
+    border-radius: var(--radius-pill);
+    background: var(--light-surface);
+    color: var(--light-primary);
+    font-family: var(--font-sans);
+    padding: 2px 10px;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -200,7 +152,7 @@ body {
 .divider {
     border: 0;
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background: var(--light-border);
     margin: 20px 0;
 }
 
@@ -213,104 +165,91 @@ body {
 }
 
 .grid-item {
-    background: var(--glass-highlight);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 18px;
+    background: var(--light-surface);
+    border: 1px solid var(--light-border);
+    border-radius: var(--radius-control);
     padding: 16px 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: var(--text-main);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.grid-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(0, 242, 254, 0.05), rgba(155, 81, 224, 0.05));
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    color: var(--light-text);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .grid-item:hover {
-    transform: translateY(-4px);
-    border-color: rgba(0, 242, 254, 0.2);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25), 0 0 12px var(--shadow-glow);
-}
-
-.grid-item:hover::before {
-    opacity: 1;
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--light-primary) 35%, var(--light-border));
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
 }
 
 .item-icon {
     width: 44px;
     height: 44px;
-    border-radius: 12px;
+    border-radius: var(--radius-control);
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    color: var(--text-muted);
-    transition: all 0.3s ease;
-    z-index: 2;
+    background: var(--light-bg);
+    border: 1px solid var(--light-border);
+    color: var(--light-text-muted);
+    transition: color 0.2s ease, background 0.2s ease;
 }
 
 .grid-item:hover .item-icon {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.1);
+    color: var(--light-text);
+    background: var(--light-bg);
 }
 
 .icon-whatsapp {
-    color: #25d366;
-    background: rgba(37, 211, 102, 0.08);
+    color: #16a34a;
+    background: #f0fdf4;
+    border-color: #bbf7d0;
 }
+
 .grid-item:hover .icon-whatsapp {
-    background: #25d366;
-    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    color: #15803d;
+    background: #f0fdf4;
+    box-shadow: none;
 }
 
 .icon-phone {
-    color: var(--primary-cyan);
-    background: rgba(0, 242, 254, 0.08);
+    color: var(--light-primary);
+    background: color-mix(in srgb, var(--light-primary) 8%, white);
+    border-color: color-mix(in srgb, var(--light-primary) 20%, var(--light-border));
 }
+
 .grid-item:hover .icon-phone {
-    background: var(--primary-cyan);
-    color: #07090e;
-    box-shadow: 0 4px 14px rgba(0, 242, 254, 0.3);
+    color: var(--light-primary);
+    background: color-mix(in srgb, var(--light-primary) 12%, white);
+    box-shadow: none;
 }
 
 .icon-email {
-    color: #f1c40f;
-    background: rgba(241, 196, 15, 0.08);
+    color: var(--light-accent);
+    background: color-mix(in srgb, var(--light-accent) 10%, white);
+    border-color: color-mix(in srgb, var(--light-accent) 22%, var(--light-border));
 }
+
 .grid-item:hover .icon-email {
-    background: #f1c40f;
-    color: #07090e;
-    box-shadow: 0 4px 14px rgba(241, 196, 15, 0.3);
+    color: var(--light-accent);
+    box-shadow: none;
 }
 
 .icon-web {
-    color: var(--primary-purple);
-    background: rgba(155, 81, 224, 0.08);
+    color: var(--light-emphasis);
+    background: color-mix(in srgb, var(--light-emphasis) 8%, white);
+    border-color: color-mix(in srgb, var(--light-emphasis) 20%, var(--light-border));
 }
+
 .grid-item:hover .icon-web {
-    background: var(--primary-purple);
-    box-shadow: 0 4px 14px rgba(155, 81, 224, 0.3);
+    color: var(--light-emphasis);
+    box-shadow: none;
 }
 
 .item-details {
     text-align: center;
-    z-index: 2;
 }
 
 .label {
@@ -318,7 +257,7 @@ body {
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--text-muted);
+    color: var(--light-text-muted);
     margin-bottom: 2px;
     font-weight: 600;
 }
@@ -327,68 +266,50 @@ body {
     display: block;
     font-size: 12px;
     font-weight: 500;
+    color: var(--light-text);
     word-break: break-all;
 }
 
 /* Address Button Styling */
 .address-button {
-    background: var(--glass-highlight);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 18px;
+    background: var(--light-surface);
+    border: 1px solid var(--light-border);
+    border-radius: var(--radius-control);
     padding: 16px 20px;
     display: flex;
     align-items: center;
     gap: 16px;
     text-decoration: none;
-    color: var(--text-main);
+    color: var(--light-text);
     text-align: left;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.address-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(0, 242, 254, 0.03), rgba(155, 81, 224, 0.03));
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .address-button:hover {
     transform: translateY(-2px);
-    border-color: rgba(0, 242, 254, 0.2);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 0 0 12px var(--shadow-glow);
-}
-
-.address-button:hover::before {
-    opacity: 1;
+    border-color: color-mix(in srgb, var(--light-primary) 35%, var(--light-border));
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
 }
 
 .address-icon {
     width: 44px;
     height: 44px;
-    border-radius: 12px;
+    border-radius: var(--radius-control);
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    color: var(--text-muted);
-    transition: all 0.3s ease;
+    background: var(--light-bg);
+    border: 1px solid var(--light-border);
+    color: var(--light-text-muted);
+    transition: color 0.2s ease;
     flex-shrink: 0;
-    z-index: 2;
 }
 
 .address-button:hover .address-icon {
-    color: var(--primary-cyan);
-    border-color: rgba(0, 242, 254, 0.3);
-    background: rgba(0, 242, 254, 0.05);
-    transform: scale(1.05);
+    color: var(--light-primary);
+    border-color: color-mix(in srgb, var(--light-primary) 25%, var(--light-border));
+    background: var(--light-bg);
+    transform: none;
 }
 
 .address-details {
@@ -400,7 +321,7 @@ body {
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--text-muted);
+    color: var(--light-text-muted);
     margin-bottom: 2px;
     font-weight: 600;
 }
@@ -409,7 +330,7 @@ body {
     font-style: normal;
     font-size: 12px;
     line-height: 1.4;
-    color: var(--text-main);
+    color: var(--light-text);
 }
 
 /* Card Footer Actions */
@@ -421,30 +342,30 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
-    color: #07090e;
+    background: var(--light-primary);
+    color: #ffffff;
     border: none;
-    border-radius: 16px;
+    border-radius: var(--radius-pill);
     padding: 16px 24px;
-    font-family: var(--font-outfit);
+    font-family: var(--font-sans);
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 10px 20px rgba(0, 242, 254, 0.15);
+    transition: filter 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 6px 18px rgba(30, 111, 219, 0.22);
 }
 
 .btn-primary:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 28px rgba(0, 242, 254, 0.35);
+    filter: brightness(1.08);
+    transform: translateY(-1px);
 }
 
 .btn-primary:active {
-    transform: scale(0.98);
+    transform: scale(0.99);
 }
 
 .secondary-actions {
@@ -454,12 +375,12 @@ body {
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: var(--text-main);
-    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid var(--light-border);
+    color: var(--light-text);
+    border-radius: var(--radius-pill);
     padding: 12px 16px;
-    font-family: var(--font-inter);
+    font-family: var(--font-sans);
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
@@ -467,26 +388,26 @@ body {
     justify-content: center;
     align-items: center;
     gap: 6px;
-    transition: all 0.3s ease;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.15);
+    background: var(--light-surface);
+    border-color: color-mix(in srgb, var(--light-primary) 20%, var(--light-border));
     transform: translateY(-1px);
 }
 
 .btn-secondary.active {
-    background: rgba(155, 81, 224, 0.15);
-    border-color: rgba(155, 81, 224, 0.3);
-    color: #ffffff;
+    background: color-mix(in srgb, var(--light-primary) 8%, white);
+    border-color: var(--light-primary);
+    color: var(--light-primary);
 }
 
 /* Expandable QR Code Container */
 .qr-container {
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px dashed rgba(255, 255, 255, 0.1);
-    border-radius: 18px;
+    background: var(--light-surface);
+    border: 1px dashed var(--light-border);
+    border-radius: var(--radius-control);
     padding: 20px;
     text-align: center;
     margin-top: 8px;
@@ -508,7 +429,7 @@ body {
 
 .qr-info {
     font-size: 12px;
-    color: var(--text-muted);
+    color: var(--light-text-muted);
     line-height: 1.4;
     margin-bottom: 16px;
 }
@@ -516,14 +437,15 @@ body {
 .qr-wrapper {
     background: #ffffff;
     padding: 14px;
-    border-radius: 14px;
+    border-radius: var(--radius-control);
     display: inline-block;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--light-border);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.1);
     transition: transform 0.3s ease;
 }
 
 .qr-wrapper:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
 }
 
 #qrcode img {
