@@ -1,4 +1,4 @@
-const CACHE_NAME = 'qc-tech-contact-v2';
+const CACHE_NAME = 'qc-tech-contact-v3';
 const ASSETS = [
   './',
   './index.html',
